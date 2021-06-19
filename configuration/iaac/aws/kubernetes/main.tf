@@ -35,7 +35,7 @@ module "aforo255-cluster123" {
   cluster_version = "1.17"
   subnets         = ["subnet-802ad7fd", "subnet-3d614571"]  #CHANGE # Donot choose subnet from us-east-1e
   #subnets = data.aws_subnet_ids.subnets.ids
-  vpc_id          = aws_default_vpc.default.id
+  vpc_id          = vpc-969a05fd
   #vpc_id         = "vpc-1234556abcdef"
 
   node_groups = [

@@ -9,7 +9,7 @@ terraform {
   backend "s3" {
     bucket = "mybucket" # Will be overridden from build
     key    = "path/to/my/key" # Will be overridden from build
-    region = "us-east-1"
+    region = "us-east-2"
   }
 }
 
@@ -35,7 +35,7 @@ module "aforo255-cluster123" {
   cluster_version = "1.17"
   subnets         = ["subnet-802ad7fd", "subnet-3d614571"]  #CHANGE # Donot choose subnet from us-east-1e
   #subnets = data.aws_subnet_ids.subnets.ids
-  vpc_id          = vpc-969a05fd
+  vpc_id          = aws_default_vpc.default.id
   #vpc_id         = "vpc-1234556abcdef"
 
   node_groups = [
@@ -78,7 +78,7 @@ resource "kubernetes_cluster_role_binding" "example" {
 
 # Needed to set the default region
 provider "aws" {
-  region  = "us-east-1"
+  region  = "us-east-2"
 }
 
 resource "aws_iam_role" "test_role_dev" {

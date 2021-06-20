@@ -39,4 +39,4 @@ steps:
     provider: 'aws'
     command: 'destroy'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/aws/kubernetes'
-    environmentServiceNameAWS: 'TerraformAWS' 
+    environmentServiceNameAWS: 'TerraformAWS'

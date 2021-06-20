@@ -22,7 +22,7 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        containerRegistry: 'JunioDockerHub'
+        containerRegistry: 'DockerJunio'
         repository: 'jbarrera99/simple-devops'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
